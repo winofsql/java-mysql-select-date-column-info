@@ -1,3 +1,4 @@
+// コメント
 import java.sql.*;
 import java.text.*;
 

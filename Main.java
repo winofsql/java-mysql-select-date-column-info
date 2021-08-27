@@ -17,7 +17,7 @@ public class Main {
         try {
             // MySQL Connector/J 接続
             conn = (Connection) DriverManager.getConnection(
-            "jdbc:mysql://localhost/lightbox?user=root&password=&characterEncoding=UTF-8"
+                "jdbc:mysql://localhost/lightbox?user=root&password=&characterEncoding=UTF-8"
             );
 
             // ステートメント
@@ -33,7 +33,7 @@ public class Main {
 
             // 列名
             for( int i = 1; i <= columnCount; i++) {
-            System.out.println(rsmd.getColumnName(i));
+                System.out.println(rsmd.getColumnName(i));
             }
 
             // 日付フォーマット
@@ -41,19 +41,19 @@ public class Main {
             int countRow = 0;
             while( rs.next() && countRow < maxRows ) {
 
-            countRow++;
+                countRow++;
 
-            // 全ての列に対するデータの出力
-            for( int i = 1; i <= columnCount; i++) {
+                // 全ての列に対するデータの出力
+                for( int i = 1; i <= columnCount; i++) {
 
-                if ( rsmd.getColumnTypeName(i).equals("DATETIME") ) {
-                System.out.println(sdf.format(rs.getDate(i)));
+                    if ( rsmd.getColumnTypeName(i).equals("DATETIME") ) {
+                        System.out.println(sdf.format(rs.getDate(i)));
+                    }
+                    else {
+                        System.out.println(rs.getString(i));
+                    }
+
                 }
-                else {
-                System.out.println(rs.getString(i));
-                }
-
-            }
             }
 
             rs.close();

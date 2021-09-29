@@ -3,9 +3,9 @@ MySQL の読み出し
 
 mysql-connector-java-8.0.nn.jar が必要
 
-何故か、2021-07-08 現在ダウンロードできない...
-
 https://dev.mysql.com/downloads/connector/j/
+
+![image](https://user-images.githubusercontent.com/1501327/135357886-77db72f4-7f71-443d-b0cd-4a63de7d61df.png)
 
 java11 で実行を確認しています。
 
